@@ -31,17 +31,34 @@ function cambiarP(){
 }
 
 
-/* ++++++++++++++++++++++++++++++++++EJER 7 +++++++++++++++++++++++++++++++++++++++++++ 
+/* ++++++++++++++++++++++++++++++++++EJER 7 y EJER 8 +++++++++++++++++++++++++++++++++++++++++++ 
 Agregar Elementos a una Lista
 Crear una lista desordenada vacía y un botón. Al hacer click en el
 botón, agregar un nuevo elemento a la lista con un número que se
-incremente automáticamente. */
+incremente automáticamente. Eliminar Elementos de una Lista
+Modificar el ejercicio anterior para que cada elemento generado tenga un botón
+de "Eliminar" que borre solo ese elemento de la lista. */
+
 let contadorList = 1
 function agregarLista(){
     
     const lista = document.getElementById("listaDes");
+
     const nuevoItem = document.createElement("li");
+    const nuevoBoton = document.createElement("button")
+
     nuevoItem.textContent = contadorList;
+    nuevoBoton.textContent = "Eliminar";
+
+    nuevoItem.appendChild(nuevoBoton);
+    
+    nuevoBoton.addEventListener("click", () => {
+        // eliminamos el <li> completo
+        lista.removeChild(nuevoItem);
+    });
+    
     contadorList++
     lista.appendChild(nuevoItem);
 }
+
+
