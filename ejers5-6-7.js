@@ -22,7 +22,26 @@ click en un botón. */
 function cambiarP(){
     const parrafos = document.querySelectorAll("p");
     parrafos.forEach(textoP => {
-        textoP.textContent = "Se cambiaron los parrafos, yea";
+        if (textoP.textContent === "Se cambiaron los parrafos, yea"){
+            textoP.textContent = "Se volvieron a cambiar los parrafos"
+        }
+        else textoP.textContent = "Se cambiaron los parrafos, yea";
     })
 
+}
+
+
+/* ++++++++++++++++++++++++++++++++++EJER 7 +++++++++++++++++++++++++++++++++++++++++++ 
+Agregar Elementos a una Lista
+Crear una lista desordenada vacía y un botón. Al hacer click en el
+botón, agregar un nuevo elemento a la lista con un número que se
+incremente automáticamente. */
+let contadorList = 1
+function agregarLista(){
+    
+    const lista = document.getElementById("listaDes");
+    const nuevoItem = document.createElement("li");
+    nuevoItem.textContent = contadorList;
+    contadorList++
+    lista.appendChild(nuevoItem);
 }
