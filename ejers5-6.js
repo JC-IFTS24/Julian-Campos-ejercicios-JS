@@ -13,3 +13,16 @@ function contadorMod(seleccion){
     }
     document.getElementById("contador").textContent = contador;
 }
+
+/* +++++++++++++++++++++++++++++++++++++ EJER 6 +++++++++++++++++++++++++++++++++++++
+Cambiar Texto de Párrafos
+Seleccionar todos los elementos p de la página y cambiar su texto al hacer
+click en un botón. */
+
+function cambiarP(){
+    const parrafos = document.querySelectorAll("p");
+    parrafos.forEach(textoP => {
+        textoP.textContent = "Se cambiaron los parrafos, yea";
+    })
+
+}
